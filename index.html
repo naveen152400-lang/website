@@ -1,0 +1,654 @@
+  <!DOCTYPE html>
+  <html lang="ta">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>வெற்றி மக்கள் கழகம் | Vetri Makkal Kazhagam</title>
+  <meta name="description" content="வெற்றி மக்கள் கழகம் – தலைவருடன் இணைந்து, மக்களுக்காக. Vetri Makkal Kazhagam – with our leader, for the people of Tamil Nadu.">
+  <link rel="icon" href="images/file_0000000002e08211be3871c2856f8af8.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+  :root{
+    --navy:#3F2C05; --navy-2:#624500; --blue:#9A6500; --sky:#FFF2C2;
+    --saffron:#E6A400; --saffron-2:#F7C948; --amber:#FFE17A;
+    --ivory:#FFFCF0; --ink:#34290F; --muted:#6B5D3D; --white:#fff;
+    --radius:20px; --shadow:0 14px 38px rgba(63,44,5,.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:78px}
+  body{font-family:'Noto Sans Tamil','Poppins',system-ui,sans-serif;color:var(--ink);background:var(--ivory);line-height:1.7;overflow-x:hidden}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .scroll-progress{position:fixed;inset:0 0 auto;height:3px;z-index:60;background:rgba(255,255,255,.18);pointer-events:none}
+  .scroll-progress span{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--amber),var(--saffron-2));transform:scaleX(0);transform-origin:left center}
+  .container{width:min(1200px,92%);margin-inline:auto}
+  section{padding:90px 0}
+  .eyebrow{display:inline-block;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.78rem;color:var(--blue);background:var(--sky);padding:6px 15px;border-radius:999px;margin-bottom:14px}
+  h2.title{font-size:clamp(1.8rem,3.6vw,2.8rem);color:var(--navy);line-height:1.25;font-weight:800;margin-bottom:12px}
+  h2.title::after{content:"";display:block;width:48px;height:4px;margin-top:12px;border-radius:4px;background:linear-gradient(90deg,var(--saffron),var(--amber))}
+  .center h2.title::after{margin-inline:auto}
+  .lead{color:var(--muted);max-width:660px}
+  .center{text-align:center}.center .lead{margin-inline:auto}
+  .dark{background:linear-gradient(160deg,#493200,#72500A);color:#fff}
+  .dark h2.title{color:#fff}.dark .lead{color:#FFF0B8}.dark .eyebrow{background:rgba(255,225,122,.18);color:var(--amber)}
+
+  /* HEADER */
+  header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(63,44,5,.96);backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(40,28,0,.3);transition:background .25s,box-shadow .25s}
+  header.scrolled{background:rgba(53,38,0,.98);box-shadow:0 6px 24px rgba(40,28,0,.24)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:14px;transition:height .25s}
+  header.scrolled .nav{height:62px}
+  .brand{display:flex;align-items:center;gap:11px;min-width:0}
+  .brand img{width:46px;height:46px;border-radius:50%;background:#fff;flex:none;object-fit:cover;border:2px solid var(--saffron)}
+  header.scrolled .brand img{width:40px;height:40px}
+  .brand span{color:#fff;font-weight:800;font-size:1.08rem;line-height:1.15;white-space:nowrap}
+  nav ul{display:flex;list-style:none;gap:6px}
+  nav a{display:block;padding:9px 17px;border-radius:999px;color:#FFF4D0;font-weight:600;font-size:.95rem;transition:background .25s,color .25s,transform .25s}
+  nav a:hover,nav a.active{background:var(--saffron);color:#fff}
+  nav a:hover{transform:translateY(-2px)}
+  .right{display:flex;align-items:center;gap:10px}
+  .lang{display:flex;background:rgba(255,255,255,.1);border:1px solid rgba(255,225,122,.6);border-radius:999px;padding:3px}
+  .lang button{border:0;background:transparent;color:#fff;font:600 .85rem 'Noto Sans Tamil','Poppins',sans-serif;padding:6px 13px;border-radius:999px;cursor:pointer;transition:.25s}
+  .lang button.on{background:var(--saffron);color:#fff}
+  .burger{display:none;width:42px;height:42px;border:0;background:transparent;cursor:pointer;position:relative}
+  .burger span,.burger span::before,.burger span::after{position:absolute;left:9px;width:24px;height:3px;border-radius:3px;background:var(--saffron);content:"";transition:.3s}
+  .burger span{top:19px}.burger span::before{left:0;top:-8px}.burger span::after{left:0;top:8px}
+  .burger.open span{background:transparent}.burger.open span::before{top:0;transform:rotate(45deg)}.burger.open span::after{top:0;transform:rotate(-45deg)}
+
+  /* HERO */
+  .hero{padding:140px 0 120px;background:
+    radial-gradient(circle at 80% 30%,rgba(255,255,255,.42),transparent 48%),
+    radial-gradient(circle at 10% 90%,rgba(230,164,0,.22),transparent 40%),
+    linear-gradient(135deg,#FFF4BD,#FFD84A 55%,#F2B90B);color:var(--navy);position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(63,44,5,.08) 1.5px,transparent 1.5px);background-size:30px 30px;animation:hero-pattern 32s linear infinite}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;position:relative;z-index:1}
+  @keyframes hero-pattern{to{background-position:60px 60px}}
+  @keyframes rise-in{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes portrait-in{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+  @keyframes badge-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .hero-grid>div:first-child{animation:rise-in .8s both}
+  .leader-frame{animation:portrait-in .9s .12s both}
+  .page-loader{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:linear-gradient(145deg,#FFF4BD,#FFD84A 55%,#F2B90B);opacity:1;visibility:visible;transition:opacity .4s ease,visibility .4s ease}
+  .page-loader.is-done{opacity:0;visibility:hidden;pointer-events:none}
+  .loader-content{display:grid;justify-items:center;gap:14px;color:var(--navy);font-weight:800}
+  .loader-emblem{position:relative;width:104px;height:104px;display:grid;place-items:center}
+  .loader-emblem::before,.loader-emblem::after{position:absolute;inset:0;content:"";border:3px solid transparent;border-top-color:var(--navy);border-right-color:var(--navy);border-radius:50%;animation:loader-spin 1.1s linear infinite}
+  .loader-emblem::after{inset:8px;border-top-color:#fff;border-right-color:#fff;animation-duration:1.6s;animation-direction:reverse}
+  .loader-emblem img{width:76px;height:76px;object-fit:cover;border-radius:50%;background:#fff}
+  .loader-content p{font-size:1rem}
+  .loader-track{width:144px;height:4px;border-radius:999px;background:rgba(63,44,5,.2);overflow:hidden}
+  .loader-track::after{content:"";display:block;width:44%;height:100%;border-radius:inherit;background:var(--navy);animation:loader-progress 1s ease-in-out infinite alternate}
+  @keyframes loader-spin{to{transform:rotate(360deg)}}
+  @keyframes loader-progress{from{transform:translateX(-10%)}to{transform:translateX(140%)}}
+  .tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.55);color:#654600;border:1px solid rgba(154,101,0,.35);padding:7px 16px;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:18px}
+  .hero h1{font-size:clamp(2.3rem,5.4vw,4.3rem);line-height:1.15;font-weight:900;margin-bottom:18px}
+  .hero h1 em{font-style:normal;background:linear-gradient(90deg,#9A5700,#604000);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{font-size:1.1rem;color:#51421F;max-width:560px;margin-bottom:30px}
+  .btns{display:flex;flex-wrap:wrap;gap:14px}
+  .btn{display:inline-block;padding:14px 30px;border-radius:999px;font-weight:700;font-size:1rem;transition:transform .25s,box-shadow .25s,background-color .25s,color .25s;cursor:pointer;border:2px solid transparent;font-family:inherit}
+  .btn-main{background:linear-gradient(90deg,var(--saffron),var(--saffron-2));color:#fff;box-shadow:0 10px 24px rgba(255,122,26,.4)}.btn-main:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(154,101,0,.3)}
+  .btn-ghost{border-color:rgba(63,44,5,.55);color:var(--navy)}.btn-ghost:hover{background:#fff;color:var(--navy)}
+  .leader-frame{position:relative;max-width:430px;margin-inline:auto}
+  .leader-frame .photo{border-radius:28px;overflow:hidden;aspect-ratio:3/4;background:var(--navy-2);border:5px solid rgba(255,255,255,.9);box-shadow:0 30px 60px rgba(63,44,5,.35)}
+  .leader-frame .photo img{width:100%;height:100%;object-fit:cover;object-position:top}
+  .leader-frame::before{content:"";position:absolute;inset:-16px 16px 16px -16px;border:3px solid var(--saffron);border-radius:30px}
+  .badge{position:absolute;left:-26px;bottom:34px;width:112px;height:112px;border-radius:50%;background:#fff;padding:5px;box-shadow:0 12px 30px rgba(0,0,0,.4);animation:badge-float 4s ease-in-out 1s infinite}
+  .badge img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+  .nameplate{position:absolute;right:-12px;bottom:-22px;background:linear-gradient(90deg,var(--saffron),var(--saffron-2));color:#fff;padding:12px 22px;border-radius:14px;box-shadow:var(--shadow);font-weight:800;line-height:1.25;animation:rise-in .6s .55s both}
+  .nameplate small{display:block;font-weight:600;font-size:.78rem;opacity:.95}
+
+  /* STATS */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:-62px;position:relative;z-index:3}
+  .stat{background:#fff;border-radius:var(--radius);padding:28px 16px;text-align:center;box-shadow:var(--shadow);border-bottom:5px solid var(--saffron);transition:transform .25s,box-shadow .25s}
+  .stat:hover{transform:translateY(-6px);box-shadow:0 20px 42px rgba(63,44,5,.2)}
+  .stat b{display:block;font:800 2.5rem 'Poppins',sans-serif;color:var(--blue)}
+  .stat span{color:var(--muted);font-weight:600;font-size:.94rem}
+
+  /* TICKER */
+  .ticker{background:var(--saffron);color:var(--navy);font-weight:700;overflow:hidden;white-space:nowrap;padding:11px 0;margin-top:70px}
+  .ticker div{display:inline-block;padding-left:100%;animation:scroll 38s linear infinite}
+  .ticker span{margin:0 34px}
+  @keyframes scroll{to{transform:translateX(-100%)}}
+  .ticker:hover div{animation-play-state:paused}
+
+  /* LEADER MESSAGE */
+  .msg-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;align-items:center}
+  .msg-photo{position:relative}
+  .msg-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:var(--radius);box-shadow:var(--shadow);background:var(--sky);transition:transform .45s}
+  .msg-photo:hover img{transform:scale(1.025)}
+  .msg-photo::after{content:"";position:absolute;inset:20px -20px -20px 20px;border-radius:var(--radius);background:linear-gradient(135deg,#F3CD48,var(--saffron));z-index:-1;opacity:.9}
+  .quote-mark{font:900 6rem/0.6 Georgia,serif;color:var(--saffron);display:block;margin-bottom:6px}
+  .msg p{color:var(--muted);margin-bottom:14px;font-size:1.04rem}
+  .msg .big{font-size:1.4rem;color:var(--navy);font-weight:700;line-height:1.5;margin-bottom:16px}
+  .sign{margin-top:18px;padding-left:16px;border-left:5px solid var(--saffron)}
+  .sign b{display:block;color:var(--navy);font-size:1.15rem}
+  .sign span{color:var(--muted);font-size:.92rem}
+
+  /* VISION MISSION */
+  .vm{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:44px}
+  .vm div{background:rgba(255,255,255,.07);border:1px solid rgba(255,225,122,.35);border-radius:var(--radius);padding:34px}
+  .vm h3{color:var(--amber);font-size:1.4rem;margin-bottom:10px}
+  .vm p{color:#FFF0B8}
+
+  /* CARDS */
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:46px}
+  .card{background:#fff;padding:30px 26px;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+  .card::before{content:"";position:absolute;left:0;top:0;width:100%;height:5px;background:linear-gradient(90deg,var(--blue),var(--saffron))}
+  .card:hover{transform:translateY(-8px)}
+  .ico{width:60px;height:60px;border-radius:18px;background:var(--sky);display:grid;place-items:center;font-size:1.8rem;margin-bottom:16px;transition:transform .3s,background .3s}
+  .card:hover .ico{transform:rotate(-5deg) scale(1.08);background:#FFE69A}
+  .card h3{color:var(--navy);font-size:1.15rem;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.95rem}
+  .dark .card{background:rgba(255,255,255,.08);box-shadow:none;border:1px solid rgba(255,255,255,.12)}
+  .dark .card h3{color:#fff}.dark .card p{color:#FFF0B8}.dark .ico{background:rgba(255,225,122,.18)}
+
+  /* PROMISES */
+  .promise{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
+  .promise div{display:flex;gap:16px;background:#fff;padding:22px;border-radius:var(--radius);box-shadow:var(--shadow);align-items:flex-start;transition:transform .25s,box-shadow .25s}
+  .promise div:hover{transform:translateY(-4px);box-shadow:0 20px 42px rgba(63,44,5,.2)}
+  .promise .n{flex:none;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--saffron));color:#fff;font:800 1.1rem 'Poppins',sans-serif;display:grid;place-items:center}
+  .promise h4{color:var(--navy);font-size:1.08rem}
+  .promise p{color:var(--muted);font-size:.94rem}
+
+  /* TIMELINE */
+  .timeline{position:relative;max-width:820px;margin:50px auto 0}
+  .timeline::before{content:"";position:absolute;left:21px;top:0;bottom:0;width:4px;background:linear-gradient(var(--saffron),var(--blue));border-radius:4px}
+  .tl{position:relative;padding:0 0 30px 64px}
+  .tl::before{content:"";position:absolute;left:10px;top:4px;width:26px;height:26px;border-radius:50%;background:var(--ivory);border:6px solid var(--saffron)}
+  .tl h4{color:var(--navy);font-size:1.12rem}.tl small{color:var(--saffron);font-weight:700}
+  .tl p{color:var(--muted);font-size:.95rem}
+
+  /* GALLERY */
+  #gallery{background:linear-gradient(145deg,#FFF5D0,#FFEAA0)}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+  .grid figure{position:relative;border-radius:var(--radius);overflow:hidden;cursor:zoom-in;aspect-ratio:2/3;background:#fff;box-shadow:var(--shadow);transition:transform .35s,box-shadow .35s}
+  .grid figure:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(63,44,5,.24)}
+  .poster-open{position:relative;display:block;width:100%;height:100%;padding:0;border:0;background:#fff;color:inherit;text-align:left;font:inherit;cursor:zoom-in}
+  .poster-open:focus-visible{outline:3px solid var(--blue);outline-offset:-5px}
+  .grid img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+  .grid figure:hover img{transform:scale(1.07)}
+  .poster-caption{position:absolute;inset:auto 0 0;display:flex;align-items:center;gap:10px;padding:22px 14px 14px;background:linear-gradient(transparent,rgba(35,25,3,.84));color:#fff;font-size:.9rem;font-weight:700}
+  .poster-number{flex:none;display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--amber);color:var(--navy);font:800 .8rem 'Poppins',sans-serif}
+  .poster-expand{margin-left:auto;font-size:1.15rem;transition:transform .25s}
+  .poster-open:hover .poster-expand{transform:translate(2px,-2px)}
+  .lightbox{position:fixed;inset:0;z-index:100;background:rgba(35,25,3,.94);display:flex;visibility:hidden;opacity:0;align-items:center;justify-content:center;padding:24px;transition:opacity .25s,visibility .25s}
+  .lightbox.show{visibility:visible;opacity:1}
+  body.lightbox-open{overflow:hidden}
+  .lightbox img{max-height:90vh;max-width:92vw;border-radius:12px;transform:scale(.96);transition:transform .25s}
+  .lightbox.show img{transform:scale(1)}
+  .lightbox button{position:absolute;top:18px;right:22px;font-size:2.4rem;background:none;border:0;color:var(--saffron);cursor:pointer}
+
+  /* ABOUT extra: events */
+  .events{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:44px}
+  .event{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;gap:0;transition:transform .25s,box-shadow .25s}
+  .event:hover{transform:translateY(-5px);box-shadow:0 20px 42px rgba(63,44,5,.2)}
+  .event .d{flex:none;width:84px;background:linear-gradient(180deg,#A56D00,#624500);color:#fff;text-align:center;padding:18px 6px;font-weight:800}
+  .event .d b{display:block;font:800 1.9rem 'Poppins',sans-serif;color:var(--amber)}
+  .event .t{padding:18px}
+  .event h4{color:var(--navy);font-size:1.05rem}.event p{color:var(--muted);font-size:.92rem}
+
+  /* JOIN CTA */
+  .join{position:relative;overflow:hidden;background:linear-gradient(120deg,var(--saffron),var(--saffron-2));color:#fff;border-radius:28px;padding:56px 40px;text-align:center;box-shadow:0 24px 50px rgba(255,122,26,.35)}
+  .join::before{content:"";position:absolute;inset:-80% auto -80% -35%;width:22%;transform:translateX(-180%) rotate(20deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.24),transparent);transition:transform .75s;pointer-events:none}
+  .join:hover::before{transform:translateX(750%) rotate(20deg)}
+  .join>*{position:relative}
+  .join h2{font-size:clamp(1.7rem,3.4vw,2.6rem);font-weight:900;margin-bottom:10px}
+  .join p{max-width:620px;margin:0 auto 26px;color:#fff3e8}
+  .join .btn{background:var(--navy);color:#fff}.join .btn:hover{transform:translateY(-3px)}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:40px auto 0;display:grid;gap:12px}
+  details{background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(63,44,5,.1);padding:16px 22px;transition:box-shadow .25s,transform .25s}
+  details:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(63,44,5,.14)}
+  summary{cursor:pointer;font-weight:700;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px}
+  summary::after{content:"+";color:var(--saffron);font-size:1.5rem;line-height:1}
+  details[open] summary::after{content:"–"}
+  details p{margin-top:10px;color:var(--muted)}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:44px;margin-top:40px}
+  .info{display:grid;gap:16px;align-content:start}
+  .info div{display:flex;gap:14px;background:rgba(255,255,255,.07);padding:18px;border-radius:14px;border:1px solid rgba(255,225,122,.3)}
+  .info i{font-style:normal;font-size:1.5rem}
+  .info b{display:block;color:var(--amber)}
+  .info span{color:#FFF0B8;font-size:.95rem}
+  .social{display:flex;gap:10px;flex-wrap:wrap}
+  .social a{padding:9px 18px;border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,225,122,.4);font-weight:600;font-size:.9rem}
+  .social a:hover{background:var(--saffron)}
+  .social a{transition:transform .2s,background .2s}
+  .social a:hover{transform:translateY(-2px)}
+  form{background:#fff;color:var(--ink);padding:32px;border-radius:var(--radius);display:grid;gap:14px}
+  input,textarea,select{width:100%;padding:13px 16px;border:2px solid #EADBAA;border-radius:12px;font:inherit;background:#FFFEFA;transition:border-color .2s,box-shadow .2s,background-color .2s}
+  input:focus,textarea:focus,select:focus{outline:0;border-color:var(--blue);background:#fff;box-shadow:0 0 0 4px rgba(154,101,0,.12)}
+  textarea{min-height:110px;resize:vertical}
+  form h3{color:var(--navy)}
+
+  footer{background:#352600;color:#FFF0B8;padding:40px 0 20px;text-align:center;font-size:.92rem}
+  footer img{width:72px;height:72px;border-radius:50%;margin:0 auto 12px;background:#fff;object-fit:cover}
+  footer .links{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;margin:12px 0}
+  footer .links a:hover{color:var(--saffron)}
+  .copy{border-top:1px solid rgba(255,225,122,.2);margin-top:16px;padding-top:14px;font-size:.82rem}
+
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  .stats .reveal:nth-child(2),.cards .reveal:nth-child(2),.promise .reveal:nth-child(2){transition-delay:.08s}
+  .stats .reveal:nth-child(3),.cards .reveal:nth-child(3),.promise .reveal:nth-child(3){transition-delay:.16s}
+  .stats .reveal:nth-child(4),.cards .reveal:nth-child(4),.promise .reveal:nth-child(4){transition-delay:.24s}
+  .cards .reveal:nth-child(5),.promise .reveal:nth-child(5){transition-delay:.32s}
+  .cards .reveal:nth-child(6),.promise .reveal:nth-child(6){transition-delay:.4s}
+  .cards .reveal:nth-child(7){transition-delay:.48s}
+  .cards .reveal:nth-child(8){transition-delay:.56s}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:4px}
+
+  @media(max-width:960px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .stats{grid-template-columns:repeat(2,1fr)}
+    .msg-grid,.contact-grid,.vm,.promise{grid-template-columns:1fr}
+    .msg-photo{max-width:420px;margin:0 auto 24px}
+  }
+  @media(max-width:820px){
+    .burger{display:block}
+    nav{position:absolute;top:72px;left:0;right:0;background:#493200;max-height:0;overflow:hidden;transition:max-height .35s}
+    nav.open{max-height:340px;border-bottom:3px solid var(--saffron)}
+    nav ul{flex-direction:column;padding:14px 4%}
+    nav a{border-radius:12px}
+    .hero-grid{grid-template-columns:1fr;text-align:center}
+    .hero p{margin-inline:auto}.btns{justify-content:center}
+    .leader-frame{max-width:310px;order:-1;margin-bottom:34px}
+    .badge{width:84px;height:84px;left:-14px}
+    .hero{padding-top:118px}
+  }
+  @media(max-width:520px){
+    section{padding:64px 0}
+    .brand{flex:1;gap:8px}
+    .brand img{width:38px;height:38px}
+    .brand span{min-width:0;overflow:hidden;text-overflow:ellipsis;font-size:.82rem}
+    .nav{gap:8px}
+    .right{gap:5px}
+    .lang button{padding:5px 7px;font-size:.72rem}
+    .burger{flex:none;width:38px}
+    .hero-grid>div:first-child{min-width:0}
+    .btns{width:100%;min-width:0;flex-direction:column;align-items:center;gap:12px}
+    .btns .btn{width:100%;max-width:340px;min-width:0;height:68px;display:inline-flex;align-items:center;justify-content:center;text-align:center;padding:12px 18px;line-height:1.35}
+    .join .btn,form .btn{width:100%;min-height:52px;display:inline-flex;align-items:center;justify-content:center;text-align:center;padding:12px 18px;line-height:1.35}
+    .stats>.stat,.promise>div{min-width:0}
+    .stat span,.promise>div p{min-width:0;overflow-wrap:anywhere}
+    .social{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .social a{min-height:44px;display:flex;align-items:center;justify-content:center;padding:9px 12px;text-align:center}
+    .grid{gap:10px}
+    .stat b{font-size:1.9rem}
+    .join{padding:42px 22px}
+  }
+  @media(max-width:360px){
+    .brand span{font-size:.74rem}
+    .lang button{padding-inline:5px;font-size:.68rem}
+    .right{gap:3px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+    .reveal{opacity:1;transform:none}
+  }
+  </style>
+  </head>
+  <body>
+
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <div class="page-loader" id="pageLoader" role="status" aria-label="Loading website">
+    <div class="loader-content">
+      <div class="loader-emblem"><img src="images/file_0000000002e08211be3871c2856f8af8.png" alt=""></div>
+      <p data-ta="ஏற்றப்படுகிறது..." data-en="Loading...">ஏற்றப்படுகிறது...</p>
+      <div class="loader-track" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <img src="images/file_0000000002e08211be3871c2856f8af8.png" alt="Vetri Makkal Kazhagam emblem">
+        <span data-ta="வெற்றி மக்கள் கழகம்" data-en="Vetri Makkal Kazhagam">வெற்றி மக்கள் கழகம்</span>
+      </a>
+      <nav id="menu">
+        <ul>
+          <li><a href="#home" class="active" data-ta="முகப்பு" data-en="Home">முகப்பு</a></li>
+          <li><a href="#gallery" data-ta="படத்தொகுப்பு" data-en="Gallery">படத்தொகுப்பு</a></li>
+          <li><a href="#about" data-ta="எங்களைப் பற்றி" data-en="About Us">எங்களைப் பற்றி</a></li>
+          <li><a href="#contact" data-ta="தொடர்புக்கு" data-en="Contact Us">தொடர்புக்கு</a></li>
+        </ul>
+      </nav>
+      <div class="right">
+        <div class="lang" role="group" aria-label="Language">
+          <button id="btn-ta" class="on" type="button">தமிழ்</button>
+          <button id="btn-en" type="button">English</button>
+        </div>
+        <button class="burger" id="burger" aria-label="Menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <span class="tag" data-ta="🙏 வணக்கம் தமிழ்நாடு" data-en="🙏 Vanakkam Tamil Nadu">🙏 வணக்கம் தமிழ்நாடு</span>
+        <h1 data-ta-html="தலைவரின் தலைமையில்… <em>வெற்றி நோக்கி மக்கள் பயணம்!</em>" data-en-html="Under our Leader… <em>The People's March to Victory!</em>">தலைவரின் தலைமையில்… <em>வெற்றி நோக்கி மக்கள் பயணம்!</em></h1>
+        <p data-ta="நேர்மை, உழைப்பு, மக்கள் சேவை – இவையே எங்கள் தலைவரின் வழிகாட்டும் மந்திரம். ஒவ்வொரு தமிழ்க் குடும்பத்தின் கனவையும் நனவாக்க, கைகோர்ப்போம்!"
+          data-en="Honesty, hard work and service to the people – the guiding mantra of our Leader. Let us join hands to turn the dream of every Tamil family into reality!">நேர்மை, உழைப்பு, மக்கள் சேவை – இவையே எங்கள் தலைவரின் வழிகாட்டும் மந்திரம். ஒவ்வொரு தமிழ்க் குடும்பத்தின் கனவையும் நனவாக்க, கைகோர்ப்போம்!</p>
+        <div class="btns">
+          <a class="btn btn-main" href="#join" data-ta="இயக்கத்தில் இணையுங்கள்" data-en="Join the Movement">இயக்கத்தில் இணையுங்கள்</a>
+          <a class="btn btn-ghost" href="#leader" data-ta="தலைவரை அறிய" data-en="Know Our Leader">தலைவரை அறிய</a>
+        </div>
+      </div>
+      <div class="leader-frame">
+        <div class="photo"><img src="images/portrait-standing.jpg" alt="Vetri Makkal Kazhagam leader" fetchpriority="high"></div>
+        <div class="badge"><img src="images/file_0000000002e08211be3871c2856f8af8.png" alt="Vetri Makkal Kazhagam emblem"></div>
+        <div class="nameplate"><span data-ta="[தலைவர் பெயர்]" data-en="[Leader Name]">[தலைவர் பெயர்]</span><small data-ta="தலைவர் • வெற்றி மக்கள் கழகம்" data-en="Leader • Vetri Makkal Kazhagam">தலைவர் • வெற்றி மக்கள் கழகம்</small></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="stats">
+      <div class="stat reveal"><b data-count="38">38</b><span data-ta="மாவட்டங்களில் மக்கள் சேவை நோக்கம்" data-en="Districts in Our Service Vision">மாவட்டங்களில் மக்கள் சேவை நோக்கம்</span></div>
+      <div class="stat reveal"><b data-count="234">234</b><span data-ta="சட்டமன்றத் தொகுதிகள்" data-en="Assembly Constituencies">சட்டமன்றத் தொகுதிகள்</span></div>
+      <div class="stat reveal"><b data-count="39">39</b><span data-ta="மக்களவைத் தொகுதிகள்" data-en="Lok Sabha Constituencies">மக்களவைத் தொகுதிகள்</span></div>
+      <div class="stat reveal"><b>1</b><span data-ta="ஒரே இலக்கு – மக்கள் வெற்றி" data-en="One Goal – People's Victory">ஒரே இலக்கு – மக்கள் வெற்றி</span></div>
+    </div>
+  </div>
+
+  <div class="ticker"><div>
+    <span data-ta="🌾 உழவர் நலன்" data-en="🌾 Farmers' Welfare">🌾 உழவர் நலன்</span>
+    <span data-ta="📚 தரமான கல்வி" data-en="📚 Quality Education">📚 தரமான கல்வி</span>
+    <span data-ta="👩 பெண்கள் பாதுகாப்பு" data-en="👩 Women's Safety">👩 பெண்கள் பாதுகாப்பு</span>
+    <span data-ta="🚀 இளைஞர்களுக்கு வேலை" data-en="🚀 Jobs for Youth">🚀 இளைஞர்களுக்கு வேலை</span>
+    <span data-ta="🏥 அனைவருக்கும் மருத்துவம்" data-en="🏥 Healthcare for All">🏥 அனைவருக்கும் மருத்துவம்</span>
+    <span data-ta="📖 தமிழ் காப்போம்" data-en="📖 Protect Tamil">📖 தமிழ் காப்போம்</span>
+    <span data-ta="🤝 சமூக நல்லிணக்கம்" data-en="🤝 Social Harmony">🤝 சமூக நல்லிணக்கம்</span>
+  </div></div>
+
+  <!-- LEADER -->
+  <section id="leader">
+    <div class="container msg-grid">
+      <div class="msg-photo reveal"><img src="images/file_00000000cc3c820b9ba1c1478c9a8443.png" alt="Our leader greeting supporters" loading="lazy"></div>
+      <div class="msg reveal">
+        <span class="eyebrow" data-ta="தலைவரின் செய்தி" data-en="Message from the Leader">தலைவரின் செய்தி</span>
+        <span class="quote-mark">“</span>
+        <p class="big" data-ta="மக்கள் தான் என் பலம்; மக்களின் முகத்தில் புன்னகை தான் என் வெற்றி." data-en="The people are my strength; a smile on the people's faces is my victory.">மக்கள் தான் என் பலம்; மக்களின் முகத்தில் புன்னகை தான் என் வெற்றி.</p>
+        <p data-ta="அன்புள்ள தமிழ் உறவுகளே, வணக்கம்! நம் மண்ணின் பெருமையையும், நம் மக்களின் உழைப்பையும் உலகம் உணரச் செய்ய வேண்டும். வேலை தேடும் இளைஞன், வயலில் வியர்வை சிந்தும் உழவன், கடலில் போராடும் மீனவன், குடும்பத்தைத் தாங்கும் தாய் – ஒவ்வொருவரின் குரலும் இந்த இயக்கத்தின் குரல்."
+          data-en="Dear Tamil brothers and sisters, Vanakkam! The world must recognise the glory of our land and the hard work of our people. The jobless youth, the farmer sweating in the field, the fisherman braving the sea, the mother who holds the family together – every voice is the voice of this movement.">அன்புள்ள தமிழ் உறவுகளே, வணக்கம்! நம் மண்ணின் பெருமையையும், நம் மக்களின் உழைப்பையும் உலகம் உணரச் செய்ய வேண்டும். வேலை தேடும் இளைஞன், வயலில் வியர்வை சிந்தும் உழவன், கடலில் போராடும் மீனவன், குடும்பத்தைத் தாங்கும் தாய் – ஒவ்வொருவரின் குரலும் இந்த இயக்கத்தின் குரல்.</p>
+        <p data-ta="சாதி, மத, வேறுபாடுகளைக் கடந்து, 'தமிழன்' என்ற ஒரே உணர்வில் ஒன்றிணைந்து, வெளிப்படையான நிர்வாகத்தையும் வளமான தமிழ்நாட்டையும் உருவாக்குவோம். உங்கள் ஆதரவே எங்கள் ஆற்றல்!"
+          data-en="Rising above caste and religion, let us unite in the single spirit of being 'Tamil', and build transparent governance and a prosperous Tamil Nadu. Your support is our strength!">சாதி, மத, வேறுபாடுகளைக் கடந்து, 'தமிழன்' என்ற ஒரே உணர்வில் ஒன்றிணைந்து, வெளிப்படையான நிர்வாகத்தையும் வளமான தமிழ்நாட்டையும் உருவாக்குவோம். உங்கள் ஆதரவே எங்கள் ஆற்றல்!</p>
+        <div class="sign"><b data-ta="[தலைவர் பெயர்]" data-en="[Leader Name]">[தலைவர் பெயர்]</b><span data-ta="தலைவர், வெற்றி மக்கள் கழகம்" data-en="Leader, Vetri Makkal Kazhagam">தலைவர், வெற்றி மக்கள் கழகம்</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section class="dark">
+    <div class="container center">
+      <span class="eyebrow" data-ta="நோக்கம் & பணி" data-en="Vision & Mission">நோக்கம் & பணி</span>
+      <h2 class="title" data-ta="வளமான, பாதுகாப்பான, பெருமைமிகு தமிழ்நாடு" data-en="A Prosperous, Safe and Proud Tamil Nadu">வளமான, பாதுகாப்பான, பெருமைமிகு தமிழ்நாடு</h2>
+      <div class="vm" style="text-align:left">
+        <div class="reveal"><h3 data-ta="🎯 எங்கள் நோக்கம்" data-en="🎯 Our Vision">🎯 எங்கள் நோக்கம்</h3><p data-ta="ஒவ்வொரு தமிழனும் கல்வி, வேலை, மருத்துவம், பாதுகாப்பு ஆகிய அடிப்படைத் தேவைகளில் தன்னிறைவு பெற்று, தலைநிமிர்ந்து வாழும் தமிழ்நாட்டை உருவாக்குவது." data-en="To build a Tamil Nadu where every Tamilian lives with dignity, self-reliant in education, employment, healthcare and security.">ஒவ்வொரு தமிழனும் கல்வி, வேலை, மருத்துவம், பாதுகாப்பு ஆகிய அடிப்படைத் தேவைகளில் தன்னிறைவு பெற்று, தலைநிமிர்ந்து வாழும் தமிழ்நாட்டை உருவாக்குவது.</p></div>
+        <div class="reveal"><h3 data-ta="🛠️ எங்கள் பணி" data-en="🛠️ Our Mission">🛠️ எங்கள் பணி</h3><p data-ta="கிராமம் முதல் நகரம் வரை மக்களைச் சந்தித்து, அவர்களின் குறைகளைக் கேட்டு, வெளிப்படையான, பொறுப்புள்ள, மக்கள் பங்கேற்புடன் கூடிய நிர்வாகத்தை வழங்குவது." data-en="To meet people from villages to cities, listen to their grievances and deliver transparent, accountable and participatory governance.">கிராமம் முதல் நகரம் வரை மக்களைச் சந்தித்து, அவர்களின் குறைகளைக் கேட்டு, வெளிப்படையான, பொறுப்புள்ள, மக்கள் பங்கேற்புடன் கூடிய நிர்வாகத்தை வழங்குவது.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIORITIES -->
+  <section>
+    <div class="container center">
+      <span class="eyebrow" data-ta="எங்கள் முன்னுரிமைகள்" data-en="Our Priorities">எங்கள் முன்னுரிமைகள்</span>
+      <h2 class="title" data-ta="தமிழ்நாட்டின் வளர்ச்சிக்கான எட்டு தூண்கள்" data-en="Eight Pillars for Tamil Nadu's Growth">தமிழ்நாட்டின் வளர்ச்சிக்கான எட்டு தூண்கள்</h2>
+      <p class="lead" data-ta="ஒவ்வொரு மாவட்டத்தின் தேவையையும் புரிந்து, அனைவருக்கும் சமமான வாய்ப்பை உருவாக்குவதே எங்கள் தலைவரின் கனவு." data-en="Our Leader's dream is to understand every district's needs and create equal opportunity for all.">ஒவ்வொரு மாவட்டத்தின் தேவையையும் புரிந்து, அனைவருக்கும் சமமான வாய்ப்பை உருவாக்குவதே எங்கள் தலைவரின் கனவு.</p>
+      <div class="cards" style="text-align:left">
+        <div class="card reveal"><div class="ico">📚</div><h3 data-ta="கல்வி" data-en="Education">கல்வி</h3><p data-ta="தரமான அரசுப் பள்ளிகள், கல்லூரிகள், கல்வி உதவித்தொகை, திறன் பயிற்சி மையங்கள்." data-en="Quality government schools and colleges, scholarships and skill-training centres.">தரமான அரசுப் பள்ளிகள், கல்லூரிகள், கல்வி உதவித்தொகை, திறன் பயிற்சி மையங்கள்.</p></div>
+        <div class="card reveal"><div class="ico">🌾</div><h3 data-ta="உழவர் நலன்" data-en="Farmers' Welfare">உழவர் நலன்</h3><p data-ta="காவிரி டெல்டா முதல் தென் மாவட்டங்கள் வரை – நீர் மேலாண்மை, நியாய விலை, நவீன வேளாண்மை." data-en="From the Cauvery delta to the southern districts – water management, fair prices, modern farming.">காவிரி டெல்டா முதல் தென் மாவட்டங்கள் வரை – நீர் மேலாண்மை, நியாய விலை, நவீன வேளாண்மை.</p></div>
+        <div class="card reveal"><div class="ico">👩</div><h3 data-ta="பெண்கள் முன்னேற்றம்" data-en="Women Empowerment">பெண்கள் முன்னேற்றம்</h3><p data-ta="பாதுகாப்பு, சுயதொழில் கடன், சுய உதவிக் குழுக்களுக்கு வலுவான ஆதரவு." data-en="Safety, self-employment loans and strong support for self-help groups.">பாதுகாப்பு, சுயதொழில் கடன், சுய உதவிக் குழுக்களுக்கு வலுவான ஆதரவு.</p></div>
+        <div class="card reveal"><div class="ico">🚀</div><h3 data-ta="இளைஞர் & வேலைவாய்ப்பு" data-en="Youth & Employment">இளைஞர் & வேலைவாய்ப்பு</h3><p data-ta="தொழில் முனைவோர் ஊக்கம், ஐடி பூங்காக்கள், சிறு-குறு தொழில் வளர்ச்சி." data-en="Entrepreneurship support, IT parks and growth of small & micro industries.">தொழில் முனைவோர் ஊக்கம், ஐடி பூங்காக்கள், சிறு-குறு தொழில் வளர்ச்சி.</p></div>
+        <div class="card reveal"><div class="ico">⚓</div><h3 data-ta="மீனவர் & கடலோர மக்கள்" data-en="Fishermen & Coast">மீனவர் & கடலோர மக்கள்</h3><p data-ta="வாழ்வாதாரப் பாதுகாப்பு, பேரிடர் தயார்நிலை, கடலோர மேம்பாடு." data-en="Livelihood protection, disaster readiness and coastal development.">வாழ்வாதாரப் பாதுகாப்பு, பேரிடர் தயார்நிலை, கடலோர மேம்பாடு.</p></div>
+        <div class="card reveal"><div class="ico">🏥</div><h3 data-ta="சுகாதாரம்" data-en="Healthcare">சுகாதாரம்</h3><p data-ta="கிராமம் முதல் நகரம் வரை எளிதில் கிடைக்கும் தரமான மருத்துவ வசதி." data-en="Accessible, quality healthcare from villages to cities.">கிராமம் முதல் நகரம் வரை எளிதில் கிடைக்கும் தரமான மருத்துவ வசதி.</p></div>
+        <div class="card reveal"><div class="ico">🏛️</div><h3 data-ta="வெளிப்படை நிர்வாகம்" data-en="Clean Governance">வெளிப்படை நிர்வாகம்</h3><p data-ta="ஊழலற்ற, காலத்தோடு பணி முடிக்கும், மக்களுக்குப் பதில் சொல்லும் அரசு." data-en="A corruption-free government that delivers on time and answers to the people.">ஊழலற்ற, காலத்தோடு பணி முடிக்கும், மக்களுக்குப் பதில் சொல்லும் அரசு.</p></div>
+        <div class="card reveal"><div class="ico">📖</div><h3 data-ta="தமிழ் & பண்பாடு" data-en="Tamil & Culture">தமிழ் & பண்பாடு</h3><p data-ta="தமிழ்மொழி, கலை, இலக்கியம், கோயில் கலை, நாட்டுப்புறக் கலைகளைப் பேணுதல்." data-en="Preserving the Tamil language, arts, literature, temple art and folk traditions.">தமிழ்மொழி, கலை, இலக்கியம், கோயில் கலை, நாட்டுப்புறக் கலைகளைப் பேணுதல்.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container center">
+      <span class="eyebrow" data-ta="சுவரொட்டி தொகுப்பு" data-en="Poster Collection">சுவரொட்டி தொகுப்பு</span>
+      <h2 class="title" data-ta="மக்கள் சேவை சுவரொட்டிகள்" data-en="Community Service Posters">மக்கள் சேவை சுவரொட்டிகள்</h2>
+      <p class="lead" data-ta="தொகுப்பிலுள்ள படங்களைத் தேர்ந்தெடுத்துப் பெரிதாகப் பார்க்கலாம்." data-en="Select any poster to view it at full size.">தொகுப்பிலுள்ள படங்களைத் தேர்ந்தெடுத்துப் பெரிதாகப் பார்க்கலாம்.</p>
+      <div class="grid poster-grid">
+        <figure class="poster-card reveal"><button class="poster-open" type="button" aria-label="View poster 1 full size"><img src="images/card-1.webp" alt="Community service poster 1" loading="lazy" decoding="async"><span class="poster-caption"><span class="poster-number">01</span><span data-ta="சுவரொட்டி 01" data-en="Poster 01">சுவரொட்டி 01</span><span class="poster-expand" aria-hidden="true">↗</span></span></button></figure>
+        <figure class="poster-card reveal"><button class="poster-open" type="button" aria-label="View poster 2 full size"><img src="images/card-2.webp" alt="Community service poster 2" loading="lazy" decoding="async"><span class="poster-caption"><span class="poster-number">02</span><span data-ta="சுவரொட்டி 02" data-en="Poster 02">சுவரொட்டி 02</span><span class="poster-expand" aria-hidden="true">↗</span></span></button></figure>
+        <figure class="poster-card reveal"><button class="poster-open" type="button" aria-label="View poster 3 full size"><img src="images/card-3.webp" alt="Community service poster 3" loading="lazy" decoding="async"><span class="poster-caption"><span class="poster-number">03</span><span data-ta="சுவரொட்டி 03" data-en="Poster 03">சுவரொட்டி 03</span><span class="poster-expand" aria-hidden="true">↗</span></span></button></figure>
+        <figure class="poster-card reveal"><button class="poster-open" type="button" aria-label="View poster 4 full size"><img src="images/card-4.webp" alt="Community service poster 4" loading="lazy" decoding="async"><span class="poster-caption"><span class="poster-number">04</span><span data-ta="சுவரொட்டி 04" data-en="Poster 04">சுவரொட்டி 04</span><span class="poster-expand" aria-hidden="true">↗</span></span></button></figure>
+        <figure class="poster-card reveal"><button class="poster-open" type="button" aria-label="View poster 5 full size"><img src="images/card-5.webp" alt="Community service poster 5" loading="lazy" decoding="async"><span class="poster-caption"><span class="poster-number">05</span><span data-ta="சுவரொட்டி 05" data-en="Poster 05">சுவரொட்டி 05</span><span class="poster-expand" aria-hidden="true">↗</span></span></button></figure>
+        <figure class="poster-card reveal"><button class="poster-open" type="button" aria-label="View poster 6 full size"><img src="images/card-6.webp" alt="Community service poster 6" loading="lazy" decoding="async"><span class="poster-caption"><span class="poster-number">06</span><span data-ta="சுவரொட்டி 06" data-en="Poster 06">சுவரொட்டி 06</span><span class="poster-expand" aria-hidden="true">↗</span></span></button></figure>
+        <figure class="poster-card reveal"><button class="poster-open" type="button" aria-label="View poster 7 full size"><img src="images/card-7.webp" alt="Community service poster 7" loading="lazy" decoding="async"><span class="poster-caption"><span class="poster-number">07</span><span data-ta="சுவரொட்டி 07" data-en="Poster 07">சுவரொட்டி 07</span><span class="poster-expand" aria-hidden="true">↗</span></span></button></figure>
+        <figure class="poster-card reveal"><button class="poster-open" type="button" aria-label="View poster 8 full size"><img src="images/card-8.webp" alt="Community service poster 8" loading="lazy" decoding="async"><span class="poster-caption"><span class="poster-number">08</span><span data-ta="சுவரொட்டி 08" data-en="Poster 08">சுவரொட்டி 08</span><span class="poster-expand" aria-hidden="true">↗</span></span></button></figure>
+        <figure class="poster-card reveal"><button class="poster-open" type="button" aria-label="View poster 9 full size"><img src="images/card-9.webp" alt="Community service poster 9" loading="lazy" decoding="async"><span class="poster-caption"><span class="poster-number">09</span><span data-ta="சுவரொட்டி 09" data-en="Poster 09">சுவரொட்டி 09</span><span class="poster-expand" aria-hidden="true">↗</span></span></button></figure>
+        <figure class="poster-card reveal"><button class="poster-open" type="button" aria-label="View poster 10 full size"><img src="images/card-10.webp" alt="Community service poster 10" loading="lazy" decoding="async"><span class="poster-caption"><span class="poster-number">10</span><span data-ta="சுவரொட்டி 10" data-en="Poster 10">சுவரொட்டி 10</span><span class="poster-expand" aria-hidden="true">↗</span></span></button></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow" data-ta="எங்களைப் பற்றி" data-en="About Us">எங்களைப் பற்றி</span>
+        <h2 class="title" data-ta="வெற்றி மக்கள் கழகம் – மக்களின் குரல்" data-en="Vetri Makkal Kazhagam – The Voice of the People">வெற்றி மக்கள் கழகம் – மக்களின் குரல்</h2>
+        <p class="lead" data-ta="கூப்பிய கரங்கள் எங்கள் அடையாளம் – பணிவு, நன்றி, மக்கள் மீதான மரியாதையின் சின்னம். தமிழ் மண்ணின் மக்களுக்காக, தமிழ் மக்களால் உருவான இயக்கம்." data-en="The folded hands are our emblem – a symbol of humility, gratitude and respect for the people. A movement born of the Tamil people, for the Tamil people.">கூப்பிய கரங்கள் எங்கள் அடையாளம் – பணிவு, நன்றி, மக்கள் மீதான மரியாதையின் சின்னம். தமிழ் மண்ணின் மக்களுக்காக, தமிழ் மக்களால் உருவான இயக்கம்.</p>
+      </div>
+
+      <div class="promise">
+        <div class="reveal"><span class="n">1</span><p><b style="color:var(--navy)" data-ta="ஒவ்வொரு ஊராட்சிக்கும் மக்கள் குறைதீர் மையம்" data-en="A grievance centre for every panchayat">ஒவ்வொரு ஊராட்சிக்கும் மக்கள் குறைதீர் மையம்</b><br><span data-ta="மக்களின் புகார்களுக்கு விரைவான தீர்வு." data-en="Swift resolution for people's complaints.">மக்களின் புகார்களுக்கு விரைவான தீர்வு.</span></p></div>
+        <div class="reveal"><span class="n">2</span><p><b style="color:var(--navy)" data-ta="இளைஞர்களுக்கு திறன் & வேலை வழிகாட்டி மையங்கள்" data-en="Skill & career guidance hubs for youth">இளைஞர்களுக்கு திறன் & வேலை வழிகாட்டி மையங்கள்</b><br><span data-ta="படித்த இளைஞர்களுக்கு வேலைவாய்ப்புப் பாதை." data-en="A clear path to jobs for educated youth.">படித்த இளைஞர்களுக்கு வேலைவாய்ப்புப் பாதை.</span></p></div>
+        <div class="reveal"><span class="n">3</span><p><b style="color:var(--navy)" data-ta="உழவர்களுக்கு நேரடிச் சந்தை & நியாய விலை" data-en="Direct markets & fair price for farmers">உழவர்களுக்கு நேரடிச் சந்தை & நியாய விலை</b><br><span data-ta="இடைத்தரகர் இல்லாத வருமானம்." data-en="Income without middlemen.">இடைத்தரகர் இல்லாத வருமானம்.</span></p></div>
+        <div class="reveal"><span class="n">4</span><p><b style="color:var(--navy)" data-ta="பெண்கள் பாதுகாப்பு & சுயதொழில் ஊக்கம்" data-en="Women's safety & enterprise support">பெண்கள் பாதுகாப்பு & சுயதொழில் ஊக்கம்</b><br><span data-ta="அச்சமின்றி வாழ, சுயமாக முன்னேற." data-en="To live without fear and rise on their own.">அச்சமின்றி வாழ, சுயமாக முன்னேற.</span></p></div>
+        <div class="reveal"><span class="n">5</span><p><b style="color:var(--navy)" data-ta="அனைத்து அரசு சேவைகளும் ஆன்லைனில்" data-en="All government services online">அனைத்து அரசு சேவைகளும் ஆன்லைனில்</b><br><span data-ta="காத்திருப்பு இல்லை, லஞ்சம் இல்லை." data-en="No waiting, no bribes.">காத்திருப்பு இல்லை, லஞ்சம் இல்லை.</span></p></div>
+        <div class="reveal"><span class="n">6</span><p><b style="color:var(--navy)" data-ta="முதியோர் & மாற்றுத்திறனாளிகளுக்கு சிறப்பு நலத்திட்டம்" data-en="Special welfare for elders & differently-abled">முதியோர் & மாற்றுத்திறனாளிகளுக்கு சிறப்பு நலத்திட்டம்</b><br><span data-ta="யாரும் விடுபடாத வளர்ச்சி." data-en="Growth that leaves no one behind.">யாரும் விடுபடாத வளர்ச்சி.</span></p></div>
+      </div>
+
+      <h2 class="title center" style="margin-top:80px" data-ta="எங்கள் பயணம்" data-en="Our Journey">எங்கள் பயணம்</h2>
+      <div class="timeline">
+        <div class="tl reveal"><small data-ta="தொடக்கம்" data-en="The Beginning">தொடக்கம்</small><h4 data-ta="மக்கள் இயக்கமாக உதயம்" data-en="Born as a people's movement">மக்கள் இயக்கமாக உதயம்</h4><p data-ta="(இங்கே ஆண்டு & நிகழ்வு சேர்க்கவும்) – தலைவரின் அழைப்பை ஏற்று மக்கள் ஒன்று திரண்டனர்." data-en="(Add year & event here) – People gathered at the Leader's call.">(இங்கே ஆண்டு & நிகழ்வு சேர்க்கவும்) – தலைவரின் அழைப்பை ஏற்று மக்கள் ஒன்று திரண்டனர்.</p></div>
+        <div class="tl reveal"><small data-ta="விரிவாக்கம்" data-en="Expansion">விரிவாக்கம்</small><h4 data-ta="மாவட்டங்கள் தோறும் தொண்டர் அணிகள்" data-en="Volunteer teams in every district">மாவட்டங்கள் தோறும் தொண்டர் அணிகள்</h4><p data-ta="(இங்கே ஆண்டு & விவரம் சேர்க்கவும்) – கிராமங்களுக்கு நேரடியாகச் சென்று மக்களைச் சந்தித்தல்." data-en="(Add year & details) – Reaching villages and meeting people directly.">(இங்கே ஆண்டு & விவரம் சேர்க்கவும்) – கிராமங்களுக்கு நேரடியாகச் சென்று மக்களைச் சந்தித்தல்.</p></div>
+        <div class="tl reveal"><small data-ta="சேவை" data-en="Service">சேவை</small><h4 data-ta="நலத்திட்ட உதவிகள் & மருத்துவ முகாம்கள்" data-en="Welfare aid & medical camps">நலத்திட்ட உதவிகள் & மருத்துவ முகாம்கள்</h4><p data-ta="(இங்கே உண்மையான நிகழ்வுகளைச் சேர்க்கவும்) – மக்கள் தேவைக்கு முதல் குரல்." data-en="(Add real events here) – The first voice for people's needs.">(இங்கே உண்மையான நிகழ்வுகளைச் சேர்க்கவும்) – மக்கள் தேவைக்கு முதல் குரல்.</p></div>
+        <div class="tl reveal"><small data-ta="எதிர்காலம்" data-en="The Future">எதிர்காலம்</small><h4 data-ta="வெற்றி நோக்கி…" data-en="Towards victory…">வெற்றி நோக்கி…</h4><p data-ta="உங்கள் ஆதரவுடன் வளமான தமிழ்நாட்டை உருவாக்குவோம்." data-en="With your support, we will build a prosperous Tamil Nadu.">உங்கள் ஆதரவுடன் வளமான தமிழ்நாட்டை உருவாக்குவோம்.</p></div>
+      </div>
+
+      <h2 class="title center" style="margin-top:70px" data-ta="வரவிருக்கும் நிகழ்வுகள்" data-en="Upcoming Events">வரவிருக்கும் நிகழ்வுகள்</h2>
+      <div class="events">
+        <div class="event reveal"><div class="d"><b>--</b><span data-ta="மாதம்" data-en="MONTH">மாதம்</span></div><div class="t"><h4 data-ta="மக்கள் சந்திப்புக் கூட்டம்" data-en="People's Meet">மக்கள் சந்திப்புக் கூட்டம்</h4><p data-ta="தேதி & இடம் விரைவில்." data-en="Date & venue to be announced.">தேதி & இடம் விரைவில்.</p></div></div>
+        <div class="event reveal"><div class="d"><b>--</b><span data-ta="மாதம்" data-en="MONTH">மாதம்</span></div><div class="t"><h4 data-ta="இலவச மருத்துவ முகாம்" data-en="Free Medical Camp">இலவச மருத்துவ முகாம்</h4><p data-ta="தேதி & இடம் விரைவில்." data-en="Date & venue to be announced.">தேதி & இடம் விரைவில்.</p></div></div>
+        <div class="event reveal"><div class="d"><b>--</b><span data-ta="மாதம்" data-en="MONTH">மாதம்</span></div><div class="t"><h4 data-ta="இளைஞர் திறன் பயிலரங்கு" data-en="Youth Skills Workshop">இளைஞர் திறன் பயிலரங்கு</h4><p data-ta="தேதி & இடம் விரைவில்." data-en="Date & venue to be announced.">தேதி & இடம் விரைவில்.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOIN -->
+  <section id="join" style="padding-top:20px">
+    <div class="container">
+      <div class="join reveal">
+        <h2 data-ta="தலைவரோடு கைகோருங்கள் – வெற்றி நம் கையில்!" data-en="Join Hands with Our Leader – Victory is in Our Hands!">தலைவரோடு கைகோருங்கள் – வெற்றி நம் கையில்!</h2>
+        <p data-ta="உறுப்பினராகுங்கள், தொண்டராகுங்கள், உங்கள் பகுதியின் மாற்றத்தின் முகமாகுங்கள்." data-en="Become a member, a volunteer, the face of change in your own area.">உறுப்பினராகுங்கள், தொண்டராகுங்கள், உங்கள் பகுதியின் மாற்றத்தின் முகமாகுங்கள்.</p>
+        <a class="btn" href="#contact" data-ta="இப்போதே இணையுங்கள்" data-en="Join Now">இப்போதே இணையுங்கள்</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="padding-top:30px">
+    <div class="container center">
+      <span class="eyebrow" data-ta="கேள்வி - பதில்" data-en="FAQ">கேள்வி - பதில்</span>
+      <h2 class="title" data-ta="உங்கள் கேள்விகளுக்கான பதில்கள்" data-en="Answers to Your Questions">உங்கள் கேள்விகளுக்கான பதில்கள்</h2>
+      <div class="faq" style="text-align:left">
+        <details><summary data-ta="உறுப்பினராவது எப்படி?" data-en="How can I become a member?">உறுப்பினராவது எப்படி?</summary><p data-ta="கீழே உள்ள 'தொடர்புக்கு' படிவத்தில் உங்கள் விவரங்களைப் பதிவு செய்யுங்கள்; எங்கள் குழு உங்களைத் தொடர்பு கொள்ளும்." data-en="Fill in your details in the Contact form below; our team will get in touch with you.">கீழே உள்ள 'தொடர்புக்கு' படிவத்தில் உங்கள் விவரங்களைப் பதிவு செய்யுங்கள்; எங்கள் குழு உங்களைத் தொடர்பு கொள்ளும்.</p></details>
+        <details><summary data-ta="தொண்டராகப் பணியாற்ற முடியுமா?" data-en="Can I volunteer?">தொண்டராகப் பணியாற்ற முடியுமா?</summary><p data-ta="நிச்சயமாக! உங்கள் ஊர், நேரம், திறமைகளைத் தெரிவியுங்கள்." data-en="Absolutely! Tell us your town, availability and skills.">நிச்சயமாக! உங்கள் ஊர், நேரம், திறமைகளைத் தெரிவியுங்கள்.</p></details>
+        <details><summary data-ta="என் பகுதிப் பிரச்சனையை எப்படித் தெரிவிப்பது?" data-en="How do I report a problem in my area?">என் பகுதிப் பிரச்சனையை எப்படித் தெரிவிப்பது?</summary><p data-ta="தொடர்புப் படிவம் அல்லது தொலைபேசி மூலம் தெரிவிக்கலாம்." data-en="Use the contact form or call us.">தொடர்புப் படிவம் அல்லது தொலைபேசி மூலம் தெரிவிக்கலாம்.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="dark">
+    <div class="container">
+      <div class="center">
+        <span class="eyebrow" data-ta="தொடர்புக்கு" data-en="Contact Us">தொடர்புக்கு</span>
+        <h2 class="title" data-ta="உங்கள் குரலை எங்களிடம் சொல்லுங்கள்" data-en="Tell Us Your Voice">உங்கள் குரலை எங்களிடம் சொல்லுங்கள்</h2>
+        <p class="lead" data-ta="கருத்துகள், ஆலோசனைகள், உறுப்பினர் சேர்க்கை – எதுவாயினும் எங்களை அணுகுங்கள்." data-en="Feedback, suggestions or membership – reach out to us for anything.">கருத்துகள், ஆலோசனைகள், உறுப்பினர் சேர்க்கை – எதுவாயினும் எங்களை அணுகுங்கள்.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="info">
+          <div><i>📍</i><p><b data-ta="முகவரி" data-en="Address">முகவரி</b><span data-ta="தலைமை அலுவலகம், (முகவரியை இங்கே சேர்க்கவும்), தமிழ்நாடு" data-en="Head Office, (add address here), Tamil Nadu">தலைமை அலுவலகம், (முகவரியை இங்கே சேர்க்கவும்), தமிழ்நாடு</span></p></div>
+          <div><i>📞</i><p><b data-ta="தொலைபேசி" data-en="Phone">தொலைபேசி</b><span>+91 00000 00000</span></p></div>
+          <div><i>✉️</i><p><b data-ta="மின்னஞ்சல்" data-en="Email">மின்னஞ்சல்</b><span>info@example.com</span></p></div>
+          <div><i>🕘</i><p><b data-ta="அலுவலக நேரம்" data-en="Office Hours">அலுவலக நேரம்</b><span data-ta="திங்கள் – சனி, காலை 9:30 – மாலை 6:00" data-en="Mon – Sat, 9:30 AM – 6:00 PM">திங்கள் – சனி, காலை 9:30 – மாலை 6:00</span></p></div>
+          <div class="social"><a href="#" aria-label="Facebook">Facebook</a><a href="#" aria-label="YouTube">YouTube</a><a href="#" aria-label="Instagram">Instagram</a><a href="#" aria-label="X">X</a></div>
+        </div>
+        <form id="contactForm">
+          <h3 data-ta="உறுப்பினர் / தொடர்புப் படிவம்" data-en="Membership / Contact Form">உறுப்பினர் / தொடர்புப் படிவம்</h3>
+          <input type="text" id="fn" required data-ta-ph="உங்கள் பெயர்" data-en-ph="Your Name" placeholder="உங்கள் பெயர்">
+          <input type="tel" id="fp" data-ta-ph="தொலைபேசி எண்" data-en-ph="Phone Number" placeholder="தொலைபேசி எண்">
+          <input type="text" id="fd" data-ta-ph="மாவட்டம் / ஊர்" data-en-ph="District / Town" placeholder="மாவட்டம் / ஊர்">
+          <input type="email" id="fe" data-ta-ph="மின்னஞ்சல்" data-en-ph="Email Address" placeholder="மின்னஞ்சல்">
+          <textarea id="fm" required data-ta-ph="உங்கள் செய்தி" data-en-ph="Your Message" placeholder="உங்கள் செய்தி"></textarea>
+          <button class="btn btn-main" type="submit" data-ta="செய்தி அனுப்பு" data-en="Send Message">செய்தி அனுப்பு</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <img src="images/file_0000000002e08211be3871c2856f8af8.png" alt="Vetri Makkal Kazhagam emblem">
+      <strong data-ta="வெற்றி மக்கள் கழகம்" data-en="Vetri Makkal Kazhagam" style="color:var(--saffron);font-size:1.15rem">வெற்றி மக்கள் கழகம்</strong>
+      <div class="links">
+        <a href="#home" data-ta="முகப்பு" data-en="Home">முகப்பு</a>
+        <a href="#gallery" data-ta="படத்தொகுப்பு" data-en="Gallery">படத்தொகுப்பு</a>
+        <a href="#about" data-ta="எங்களைப் பற்றி" data-en="About Us">எங்களைப் பற்றி</a>
+        <a href="#contact" data-ta="தொடர்புக்கு" data-en="Contact Us">தொடர்புக்கு</a>
+      </div>
+      <div class="copy">© <span id="yr">2026</span> <span data-ta="வெற்றி மக்கள் கழகம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை." data-en="Vetri Makkal Kazhagam. All rights reserved.">வெற்றி மக்கள் கழகம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.</span></div>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Expanded poster image" aria-hidden="true"><button type="button" aria-label="Close">&times;</button><img alt=""></div>
+
+  <script>
+  (function(){
+    var pageLoader=document.getElementById('pageLoader'),loadStarted=Date.now(),loadFinished=false;
+    function hidePageLoader(){
+      if(loadFinished)return;
+      loadFinished=true;
+      window.setTimeout(function(){
+        pageLoader.classList.add('is-done');
+        pageLoader.setAttribute('aria-hidden','true');
+        window.setTimeout(function(){pageLoader.remove();},450);
+      },Math.max(0,450-(Date.now()-loadStarted)));
+    }
+    if(document.readyState==='complete')hidePageLoader();
+    else window.addEventListener('load',hidePageLoader,{once:true});
+    window.setTimeout(hidePageLoader,4000);
+
+    var html=document.documentElement;
+    function setLang(l){
+      html.lang=l;
+      document.querySelectorAll('[data-'+l+']').forEach(function(el){el.textContent=el.getAttribute('data-'+l);});
+      document.querySelectorAll('[data-'+l+'-html]').forEach(function(el){el.innerHTML=el.getAttribute('data-'+l+'-html');});
+      document.querySelectorAll('[data-'+l+'-ph]').forEach(function(el){el.placeholder=el.getAttribute('data-'+l+'-ph');});
+      document.getElementById('btn-ta').classList.toggle('on',l==='ta');
+      document.getElementById('btn-en').classList.toggle('on',l==='en');
+      document.title=l==='ta'?'வெற்றி மக்கள் கழகம் | Vetri Makkal Kazhagam':'Vetri Makkal Kazhagam | வெற்றி மக்கள் கழகம்';
+      try{localStorage.setItem('vmk-lang',l);}catch(e){}
+    }
+    document.getElementById('btn-ta').onclick=function(){setLang('ta')};
+    document.getElementById('btn-en').onclick=function(){setLang('en')};
+    var saved='ta';try{saved=localStorage.getItem('vmk-lang')||'ta';}catch(e){}
+    setLang(saved);
+
+    var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+    burger.onclick=function(){burger.classList.toggle('open');menu.classList.toggle('open');};
+    menu.querySelectorAll('a').forEach(function(a){a.onclick=function(){burger.classList.remove('open');menu.classList.remove('open');};});
+
+    var links=[].slice.call(menu.querySelectorAll('a')),secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+    var header=document.querySelector('header'),scrollProgress=document.getElementById('scrollProgress'),scrollFrame=false;
+    function updateScrollEffects(){
+      var scrollable=document.documentElement.scrollHeight-window.innerHeight;
+      scrollProgress.style.transform='scaleX('+(scrollable>0?Math.min(window.scrollY/scrollable,1):0)+')';
+      header.classList.toggle('scrolled',window.scrollY>24);
+      var y=window.scrollY+130,cur=0;
+      secs.forEach(function(s,i){if(s&&s.offsetTop<=y)cur=i;});
+      links.forEach(function(a,i){a.classList.toggle('active',i===cur);});
+      scrollFrame=false;
+    }
+    window.addEventListener('scroll',function(){
+      if(!scrollFrame){scrollFrame=true;window.requestAnimationFrame(updateScrollEffects);}
+    },{passive:true});
+    updateScrollEffects();
+
+    var lb=document.getElementById('lb'),lbi=lb.querySelector('img'),lbClose=lb.querySelector('button'),returnFocus=null;
+    function closeLightbox(){
+      if(!lb.classList.contains('show'))return;
+      lb.classList.remove('show');
+      lb.setAttribute('aria-hidden','true');
+      document.body.classList.remove('lightbox-open');
+      if(returnFocus)returnFocus.focus();
+    }
+    document.querySelectorAll('.poster-open').forEach(function(button){
+      button.onclick=function(){
+        var image=button.querySelector('img');
+        returnFocus=button;
+        lbi.src=image.currentSrc||image.src;
+        lbi.alt=image.alt;
+        lb.setAttribute('aria-hidden','false');
+        lb.classList.add('show');
+        document.body.classList.add('lightbox-open');
+        lbClose.focus();
+      };
+    });
+    lbClose.onclick=closeLightbox;
+    lb.onclick=function(e){if(e.target===lb)closeLightbox();};
+    document.addEventListener('keydown',function(e){
+      if(!lb.classList.contains('show'))return;
+      if(e.key==='Escape'){closeLightbox();}
+      else if(e.key==='Tab'){e.preventDefault();lbClose.focus();}
+    });
+
+    document.getElementById('yr').textContent=new Date().getFullYear();
+
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');var counter=e.target.querySelector('[data-count]');if(counter)animateCounter(counter);io.unobserve(e.target);}});},{threshold:.12});
+      document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+    }else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in');});}
+
+    function animateCounter(counter){
+      var target=Number(counter.getAttribute('data-count'));
+      if(!Number.isFinite(target))return;
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){counter.textContent=String(target);return;}
+      var start;
+      function step(now){
+        if(start===undefined)start=now;
+        var progress=Math.min((now-start)/900,1);
+        counter.textContent=String(Math.round(target*(1-Math.pow(1-progress,3))));
+        if(progress<1)window.requestAnimationFrame(step);
+      }
+      window.requestAnimationFrame(step);
+    }
+
+    document.getElementById('contactForm').onsubmit=function(e){
+      e.preventDefault();
+      var body='Name: '+fn.value+'\nPhone: '+fp.value+'\nDistrict/Town: '+fd.value+'\nEmail: '+fe.value+'\n\n'+fm.value;
+      location.href='mailto:info@example.com?subject='+encodeURIComponent('Website enquiry / Membership')+'&body='+encodeURIComponent(body);
+    };
+  })();
+  </script>
+  </body>
+  </html>
